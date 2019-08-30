@@ -3,9 +3,9 @@ package com.company.lock;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class ReaderData implements Runnable {
-    private LockData<Integer, Integer> data;
+    private LockData<DataKeyModel, DataValueModel> data;
 
-    public ReaderData(LockData<Integer, Integer> data) {
+    public ReaderData(LockData<DataKeyModel, DataValueModel> data) {
         this.data = data;
     }
 
@@ -15,7 +15,7 @@ public class ReaderData implements Runnable {
 
         try {
 
-            ConcurrentHashMap<Integer, Integer> all = data.listAll();
+            ConcurrentHashMap<DataKeyModel, DataValueModel> all = data.listAll();
             all.entrySet().forEach(System.out::println);
             System.out.println("+++++++++++++++++++++++++++");
             Thread.sleep(100);

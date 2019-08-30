@@ -1,8 +1,6 @@
 package com.company;
 
-import com.company.lock.LockData;
-import com.company.lock.ReaderData;
-import com.company.lock.WriterData;
+import com.company.lock.*;
 import com.company.lock2.Data;
 import com.company.lock2.Receiver;
 import com.company.lock2.Sender;
@@ -18,7 +16,7 @@ public class Main {
 
     static void LockData() {
 
-        LockData<Integer, Integer> lockData = new LockData();
+        LockData<DataKeyModel, DataValueModel> lockData = new LockData();
         for (int i = 0; i < WRITER_SIZE; i++) {
             Thread writeThread = new Thread(new WriterData(lockData));
             writeThread.start();

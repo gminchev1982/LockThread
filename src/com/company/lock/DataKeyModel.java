@@ -14,4 +14,11 @@ public class DataKeyModel {
     public void setRandomKey(Integer randomKey) {
         this.randomKey = randomKey;
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "Key=" + randomKey +
+                '}';
+    }
 }
